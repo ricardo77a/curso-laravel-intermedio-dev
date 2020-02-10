@@ -1,0 +1,14 @@
+<Directory C:/xampp/htdocs>
+	AllowOverride All
+	Require all granted
+	Allow from all
+</Directory>
+
+<VirtualHost *:80>
+	DocumentRoot "C:/xampp/htdocs/cursolaravel/public"
+	ServerName curso.test
+</VirtualHost>
+
+
+
+127.0.0.1		curso.test
