@@ -13,8 +13,10 @@
                             {{ session('status') }}
                         </div>
                     @endif
-
                     You are logged in!
+                    <div class="col-md-12 mt-3">
+                        <a href="{{ route('enviar.correo') }}" class="btn btn-primary">Enviar Correo Electrónico</a>
+                    </div>
                 </div>
             </div>
         </div>
