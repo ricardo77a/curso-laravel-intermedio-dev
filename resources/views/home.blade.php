@@ -17,6 +17,31 @@
                     <div class="col-md-12 mt-3">
                         <a href="{{ route('enviar.correo') }}" class="btn btn-primary">Enviar Correo Electrónico</a>
                     </div>
+                    <div class="card m-3">
+                        <div class="card-header">
+                            <h5>Subir archivo</h5>
+                        </div>                        
+                        <div class="col-md-12 mt-3">
+                            <form action="{{ route('importar.excel') }}" method="post" enctype="multipart/form-data">
+                                @csrf
+                                <div class="input-group">
+                                    <div class="custom-file">
+                                        <input type="file" class="custom-file-input" id="inputGroupFile02" name="documento">
+                                        <label class="custom-file-label" for="inputGroupFile02" aria-describedby="inputGroupFileAddon02">Choose file</label>
+                                    </div>
+                                </div>
+                                @error('documento')
+                                    <div class="alert alert-danger mt-3" role="alert">
+                                        {{ $message }}
+                                    </div>
+                                @enderror
+                                <div class="input-group m-3">
+                                    <button type="submit" class="btn btn-dark">Subir</button>
+                                </div>
+
+                            </form>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
