@@ -42,6 +42,25 @@
                             </form>
                         </div>
                     </div>
+                    <div class="card text-white bg-success">
+                        <div class="card-header">
+                            Exportar excel
+                        </div>
+                        <div class="card-body">                        
+                            <p class="card-text">Exporta parte de la tabla becarios.</p>
+                            <a href="{{ route('exportar.excel') }}" class="btn btn-primary">Exportar</a>
+                        </div>
+                    </div>  
+
+                    <div class="card text-white bg-dark">
+                        <div class="card-header">
+                            Exportar PDF
+                        </div>
+                        <div class="card-body">                        
+                            <p class="card-text">Exporta parte de la tabla becarios.</p>
+                            <a href="{{ route('exportar.pdf') }}" class="btn btn-primary">Exportar</a>
+                        </div>
+                    </div> 
                 </div>
             </div>
         </div>
