@@ -61,6 +61,16 @@
                             <a href="{{ route('exportar.pdf') }}" class="btn btn-primary">Exportar</a>
                         </div>
                     </div> 
+
+                    <div class="card text-white bg-info">
+                        <div class="card-header">
+                            Graficas
+                        </div>
+                        <div class="card-body">                            
+                            <p class="card-text">Crear una vista con una gráfica.</p>
+                            <a href="{{ route('grafica') }}" class="btn btn-dark">Vista de gráfica</a>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>

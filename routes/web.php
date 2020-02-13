@@ -25,3 +25,4 @@ Route::get('/enviar-correo', 'EnviarCorreoController')->name('enviar.correo');
 Route::post('/importar-excel', 'BecariosController@importar')->name('importar.excel');
 Route::get('/exportar-excel', 'BecariosController@exportar')->name('exportar.excel');
 Route::get('/exportar-pdf', 'BecariosController@pdf')->name('exportar.pdf');
+Route::get('/grafica', 'BecariosController@grafica')->name('grafica');

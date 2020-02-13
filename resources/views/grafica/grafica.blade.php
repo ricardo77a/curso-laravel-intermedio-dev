@@ -1,0 +1,92 @@
+{{-- 
+ --}}
+@extends('layouts.app')
+@section('content')
+	<div class="container">
+		<div class="card">
+			<canvas id="barra">Tu navegador no soporta gráficos</canvas>
+		</div>
+	</div>
+	<canvas id="myChart" width="400" height="400"></canvas>
+
+{{-- 
+ --}}
+@endsection
+
+@section('scripts')
+{{-- 
+ --}}
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.js"></script>
+
+<script>
+var ctx = document.getElementById('myChart');
+var myChart = new Chart(ctx, {
+    type: 'bar',
+    data: {
+        labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
+        datasets: [{
+            label: '# of Votes',
+            data: [12, 19, 3, 5, 2, 3],
+            backgroundColor: [
+                'rgba(255, 99, 132, 0.2)',
+                'rgba(54, 162, 235, 0.2)',
+                'rgba(255, 206, 86, 0.2)',
+                'rgba(75, 192, 192, 0.2)',
+                'rgba(153, 102, 255, 0.2)',
+                'rgba(255, 159, 64, 0.2)'
+            ],
+            borderColor: [
+                'rgba(255, 99, 132, 1)',
+                'rgba(54, 162, 235, 1)',
+                'rgba(255, 206, 86, 1)',
+                'rgba(75, 192, 192, 1)',
+                'rgba(153, 102, 255, 1)',
+                'rgba(255, 159, 64, 1)'
+            ],
+            borderWidth: 1
+        }]
+    },
+    options: {
+        scales: {
+            yAxes: [{
+                ticks: {
+                    beginAtZero: true
+                }
+            }]
+        }
+    }
+});
+</script>
+
+
+	<script type="text/javascript">
+		var ctx = document.getElementById('barra');
+		var myChart = new Chart(ctx, {
+		    type: 'bar',
+		    data: {
+		        labels: ['Mujeres', 'Hombres'],
+		        datasets: [{
+		            label: 'Cantidad de becarios',
+		            data: [{{ $femenino }}, {{ $masculino }}],
+		            backgroundColor: [
+		                '#DC3545',
+		                '#17A2B8'
+		            ],
+		        }]
+		    },
+		    options: {
+		    	responsive:true,
+		        scales: {
+		            yAxes: [{
+		                ticks: {
+		                    beginAtZero:true
+		                }
+		            }]
+		        }
+		    }
+		});
+	</script>
+	
+@endsection
+{{-- 
+ --}}

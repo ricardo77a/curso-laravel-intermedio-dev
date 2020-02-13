@@ -10,6 +10,7 @@ use App\Exports\ExportarBecariosExport;
 use Excel;
 use PDF;
 use App\Becario;
+use DB;
 
 class BecariosController extends Controller
 {
@@ -29,5 +30,18 @@ class BecariosController extends Controller
     	$becarios = Becario::inRandomOrder()->get()->take(50);
 		$pdf = PDF::loadview('reportes.becarios', compact('becarios'));
         return $pdf->stream('reporte.pdf', array("Attachment" => 0));    	
+    }
+
+    public function grafica()
+    {
+        $becarios = Becario::select( 
+            DB::raw('SUM(IF(becarios.sexo = "MASCULINO", 1, 0)) masculino'),
+            DB::raw('SUM(IF(becarios.sexo = "FEMENINO", 1, 0)) femenino')
+        )
+        ->first();
+
+        $masculino = Becario::where('sexo', 'MASCULINO')->count();
+        $femenino = Becario::where('sexo', 'FEMENINO')->count();
+        return view('grafica.grafica', compact('becarios', 'masculino', 'femenino'));
     }
 }
