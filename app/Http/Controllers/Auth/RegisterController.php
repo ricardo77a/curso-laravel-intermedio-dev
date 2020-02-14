@@ -69,7 +69,7 @@ class RegisterController extends Controller
     {
         /* Crea el usuario */
 
-        Mail::to($data['email'])->send(new EnviarCredenciales($data));
+        //Mail::to($data['email'])->send(new EnviarCredenciales($data));
         $usuario = User::create([
             'name' => $data['name'],
             'email' => $data['email'],

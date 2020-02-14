@@ -20,11 +20,13 @@ Auth::routes();
 Auth::routes(['verify' => true]);
 
 Route::get('/home', 'HomeController@index')->name('home');
-Route::get('/enviar-correo', 'EnviarCorreoController')->name('enviar.correo');
+Route::get('/enviar-correo', 'EnviarCorreoController')->name('enviar.correo')->middleware('role:correo');;
 
 Route::post('/importar-excel', 'BecariosController@importar')->name('importar.excel');
 Route::get('/exportar-excel', 'BecariosController@exportar')->name('exportar.excel');
 Route::get('/exportar-pdf', 'BecariosController@pdf')->name('exportar.pdf');
 Route::get('/grafica', 'BecariosController@grafica')->name('grafica');
 
-Route::resource('/archivos', 'ArchivosController');
+
+Route::get('/archivos/index', 'ArchivosController@index')->name('archivos.index');
+Route::post('/archivos/store', 'ArchivosController@store')->name('archivos.store');

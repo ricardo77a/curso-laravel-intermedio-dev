@@ -178,6 +178,9 @@ return [
         Maatwebsite\Excel\ExcelServiceProvider::class,
         /*PDF*/
         Barryvdh\DomPDF\ServiceProvider::class,
+        /* Spatie */
+        Spatie\Permission\PermissionServiceProvider::class,
+        
 
     ],
 

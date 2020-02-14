@@ -71,6 +71,16 @@
                             <a href="{{ route('grafica') }}" class="btn btn-dark">Vista de gráfica</a>
                         </div>
                     </div>
+
+                    <div class="card text-dark bg-warning">
+                        <div class="card-header">
+                            Archivos
+                        </div>
+                        <div class="card-body">                            
+                            <p class="card-text">Ir a vista de archivos.</p>
+                            <a href="{{ route('archivos.index') }}" class="btn btn-dark">Vista de archivos</a>
+                        </div>
+                    </div>                    
                 </div>
             </div>
         </div>
